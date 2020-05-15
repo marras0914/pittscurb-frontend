@@ -92,13 +92,13 @@ export default () => {
       type: 'TOGGLE_BOUNDARIES', value: boundary
     })
   };
-  let regionName = document.getElementById('regionName');
-  let editorEmail = document.getElementById('editorEmail');
-  let viewerEmail = document.getElementById('viewerEmail');
+  const regionName = document.getElementById('regionName');
+  const editorEmail = document.getElementById('editorEmail');
+  const viewerEmail = document.getElementById('viewerEmail');
   const cancel = () => {
-    regionName.value = '';
-    editorEmail.value = '';
-    viewerEmail.value = '';
+    // regionName.value = '';
+    // editorEmail.value = '';
+    // viewerEmail.value = '';
   }
   const handleCreateRegion = () => {
     dispatch({type: 'CREATE_REGION', value: {
@@ -116,7 +116,7 @@ export default () => {
   return (
     <StyledPanel>
       <h2>Create region</h2>
-      <TextField id="regionName" equired size="small" variant="outlined" label="Region Name"></TextField>
+      <TextField id="regionName" required size="small" variant="outlined" label="Region Name"></TextField>
       <StyledLabel>Boundaries</StyledLabel>
       <StyledBoundriesContainer>
         { boundaries.map(boundary => ( 

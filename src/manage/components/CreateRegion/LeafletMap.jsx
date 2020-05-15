@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Map, TileLayer, GeoJSON } from 'react-leaflet';
-import { mapSources } from '../../common/constants/map';
+import { mapSources } from '../../../common/constants/map';
 
 import styled from 'styled-components';
 
