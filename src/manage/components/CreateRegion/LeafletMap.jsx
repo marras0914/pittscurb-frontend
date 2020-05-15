@@ -1,44 +1,20 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Map, TileLayer, GeoJSON } from 'react-leaflet';
-
+import { mapSources } from '../../common/constants/map';
 
 import styled from 'styled-components';
 
 const defaultLatLng = [40.4514974,-79.9902600]; // Pittsburgh strip
 
 const zoom = 12;
-const mapSources = {
-  openStreetMap: {
-    url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    maxZoom: 24,
-    attribution: ''
-  },
-  openTopoMap: {
-    url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
-    maxZoom: 24,
-    attribution: "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-  },
-  esriWorldImagery: {
-    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png",
-    maxZoom: 24,
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-  },
-  OpenStreetMap_Mapnik: {
-    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }
-};
 
 const StyledMap = styled(Map)`
   height: 100%;
   width: 67vw;
 `;
 
-const sources = ["esriWorldImagery"];
-
-
+const sources = ["openStreetMap"];
 
 const style = (feature) => {
   return {
